@@ -15,7 +15,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local ok, local_plugins = pcall(require, "local_plugins")
+local ok, local_plugins = pcall(require, "config.local_plugins")
 
 -- Setup lazy.nvim
 require("lazy").setup({

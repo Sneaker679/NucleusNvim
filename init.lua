@@ -56,4 +56,4 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- User setup
-require('local')
+require('config.local')
