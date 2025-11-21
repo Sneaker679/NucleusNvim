@@ -55,3 +55,5 @@ vim.o.sidescrolloff = 8
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- User setup
+require('local')

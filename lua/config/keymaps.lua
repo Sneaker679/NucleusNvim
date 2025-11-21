@@ -3,6 +3,19 @@ local Commands = require("config.commands")
 -- Shows lsp hints
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagnostics" })
 
+-- Go to next diagnostic (error/warning/info)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+-- Go to previous diagnostic
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+-- Go to next error
+vim.keymap.set("n", "]e", function()
+  vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })
+end, { desc = "Next error" })
+-- Go to previous error
+vim.keymap.set("n", "[e", function()
+  vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })
+end, { desc = "Previous error" })
+
 -- Keymap to compile the makefile in the current directory or find the make file in the parent directories
 vim.keymap.set('n', '<leader>m', Commands.MakeFile, { desc = "Compile Makefile in current file's dir" })
 
